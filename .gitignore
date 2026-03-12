@@ -1,0 +1,13 @@
+# Ignorar archivos compilados
+*.o
+CASOS_PRUEBA_INDIVIDUALES
+CASOS_PRUEBA_ORÁCULO
+TIEMPOS_ANALISIS_EXPERIMENTAL
+
+# Ignorar entorno virtual de python
+.venv/
+venv/
+env/
+
+# Ignorar archivos de sistema
+.DS_Store
