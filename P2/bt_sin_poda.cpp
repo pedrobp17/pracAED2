@@ -68,8 +68,8 @@ bool criterio(int &nivel, Solucion& s, vector<int>& asigW, int ba, int bm){
 
     return nivel < nt - 1 && 
         asigW[s[nivel]] <= C[s[nivel]] && 
-        B[s[nivel]][nivel]!=0 &&
-        !(cotaSuperior(nivel, ba, asigW) <= bm);
+        B[s[nivel]][nivel]!=0;
+    //    !(cotaSuperior(nivel, ba, asigW) <= bm);
 
 }
 
