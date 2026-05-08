@@ -1,0 +1,63 @@
+pedro@pedroLinux:~/INFO/AED2/pracAED2-main/P2$ ./tiempos_BT
+Iniciando pruebas de rendimiento...
+N=1 finalizado. Sin Poda: 0.000374ms | Con Poda: 0.000353ms
+N=2 finalizado. Sin Poda: 0.000685ms | Con Poda: 0.000464ms
+N=3 finalizado. Sin Poda: 0.00138ms | Con Poda: 0.000544ms
+N=4 finalizado. Sin Poda: 0.004151ms | Con Poda: 0.000798ms
+N=5 finalizado. Sin Poda: 0.020958ms | Con Poda: 0.001155ms
+N=6 finalizado. Sin Poda: 0.17936ms | Con Poda: 0.003261ms
+N=7 finalizado. Sin Poda: 1.659ms | Con Poda: 0.004848ms
+N=8 finalizado. Sin Poda: 13.9392ms | Con Poda: 0.007833ms
+N=9 finalizado. Sin Poda: 75.7334ms | Con Poda: 0.006064ms
+N=10 finalizado. Sin Poda: 829.444ms | Con Poda: 0.009926ms
+Resultados guardados en resultados_asignacion_BT.csv
+pedro@pedroLinux:~/INFO/AED2/pracAED2-main/P2$ python3 regresion_BT.py
+   Regresión lineal Caso con Poda ~ n^2
+  Pendiente: 0.000098
+  R²: 0.9279
+  p-valor: 7.6274e-06
+
+¡Listo! Revisa la carpeta 'figurasBT' para ver los resultados.
+pedro@pedroLinux:~/INFO/AED2/pracAED2-main/P2$ python3 regresion_BT_solo_poda.py
+   Regresión lineal Caso con Poda ~ n^2
+  Pendiente: 0.000098
+  R²: 0.9279
+  p-valor: 7.6274e-06
+
+¡Listo! Revisa la carpeta 'figurasBT' para ver los resultados.
+N,Tiempo_Sin_Poda,Tiempo_Con_Poda
+1,0.000374,0.000353
+2,0.000685,0.000464
+3,0.00138,0.000544
+4,0.004151,0.000798
+5,0.020958,0.001155
+6,0.17936,0.003261
+7,1.659,0.004848
+8,13.9392,0.007833
+9,75.7334,0.006064
+10,829.444,0.009926
+-----------------AR-------------------=== ANÁLISIS DE REGRESIÓN: AVANCE RÁPIDO ===
+
+PEOR CASO (~n³):
+  Pendiente: 0.0000000016
+  R²: 0.9899 (Calidad del ajuste)
+  MSE: 13557.4653
+  p-valor: 3.4873e-06
+
+MEJOR CASO (~n² log n):
+  Pendiente: 0.0000021658
+  R²: 1.0000
+  MSE: 53.6474
+  p-valor: 3.6360e-12
+
+[PROCESO COMPLETADO]: Se han generado 4 archivos PDF en la carpeta 'figurasAR/'.
+
+tiempos: 
+Longitud,PeorCaso,MejorCaso
+200,0.902309,0.466415
+400,1.79629,1.75046
+800,8.95248,8.61688
+1600,38.9636,36.3942
+3200,173.591,170.114
+6400,774.634,773.354
+12800,3487.96,3755.22
