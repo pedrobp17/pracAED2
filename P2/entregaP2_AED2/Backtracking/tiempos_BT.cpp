@@ -87,7 +87,7 @@ double calcularMax(vector<double> v) {
 }
 
 int main() {
-    int nt = 7;
+    int nt;
     double multMin = 0.5;
     double multMax = 1.5;
     int benefMax = 9;
@@ -107,11 +107,10 @@ int main() {
     vector<double> ratios_mejora;
     vector<double> ratios_empeora;
 
-    ofstream csv("comparacion_BT.csv");
+    ofstream csv("resultados_poda.csv");
     csv << "Caso,nt,nw,Tiempo_Sin_Poda,Tiempo_Con_Poda,Diferencia_Absoluta,Diferencia_Porcentual,Ratio,Resultado\n";
 
     cout << "Comparacion BT con/sin poda - casos aleatorios" << endl;
-    cout << "  nt = " << nt << endl;
     cout << "  multiplicador en [" << multMin << ", " << multMax << "]" << endl;
     cout << "  beneficios en [0, " << benefMax << "]" << endl;
     cout << "  capacidades en [1, " << capMax << "]" << endl;
@@ -119,6 +118,11 @@ int main() {
     cout << "  repeticiones por caso = " << repeticiones << endl << endl;
 
     for (int i = 0; i < num_casos; i++) {
+
+        std::uniform_int_distribution<> dis(6, 8);
+
+        nt= dis(gen);
+
         Caso caso = generarCasoAleatorio(nt, multMin, multMax, benefMax, capMax, gen);
 
         vector<double> tiempos_sin;
@@ -159,6 +163,7 @@ int main() {
             << resultado << "\n";
 
         cout << "Caso " << i + 1 << "/" << num_casos
+             << " | nt=" << caso.nt
              << " | nw=" << caso.nw
              << " | sin=" << medSin << "ms"
              << " | con=" << medCon << "ms"
@@ -210,7 +215,7 @@ int main() {
         cout << "No hay casos donde con poda sea peor." << endl;
     }
 
-    cout << endl << "Resultados guardados en comparacion_BT.csv" << endl;
+    cout << endl << "Resultados guardados en resultados_poda.csv" << endl;
 
     return 0;
 }

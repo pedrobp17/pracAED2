@@ -8,7 +8,7 @@ import os
 os.makedirs('figurasAR', exist_ok=True)
 
 # Leer CSV generado por el programa de C++
-df = pd.read_csv('figurasAR/resultados_AR.csv')
+df = pd.read_csv('resultados_AR.csv')
 
 # --- Cálculo de variables auxiliares para las regresiones ---
 # Peor Caso: Teóricamente n³
