@@ -1,3 +1,6 @@
+
+//Cabecera usada en tiempos_BT.cpp para favorecer el encapsulamiento y no complicar el código.
+
 #include <iostream>
 #include <vector>
 
